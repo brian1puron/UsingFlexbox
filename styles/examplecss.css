@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.flex-container{
+    height: 400px;
+    display: flex;
+    background-color: antiquewhite; /* this is alwasy in the main axis */
+     justify-content: space-between; /* this is alwasy in the cross axis */
+    align-items: center;
+    
+    /*if we have too many item in a div and we want them all to keep the same width and heigh of 100px we can use the next */
+    /* flex-wrap: wrap; */
+}
+
+.item{
+
+    /* flex-basis: 100px; and width are pretty much the same if we use this we gotta use grow in each item  */
+    /* in order to use flex grow shrink and basis all at the sam time use the next and you can comment each idepent item */
+    flex: 1 0 100px;
+    /* if we want div to take the entoire space evenly then just use flex:1 */
+    height: 100px;
+    background: #254de4;
+    color: white;
+    margin: 10px;
+
+    /* To align whast inside each item/box do the next */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lets say i want to align just the last item of 3 then use alignself. and order switch teh places of the div without the need to hcnage html*/
+
+.item:nth-of-type(1){
+
+    
+    order: 2;
+    align-self: start;
+    /* flex-grow: 1; */
+
+}
+.item:nth-of-type(2){
+
+   
+    order: 3;
+    align-self: center;
+    /* flex-grow: 2; */
+
+}
+.item:nth-of-type(3){
+
+    
+    order: 1;
+    align-self: end;
+    /* flex-grow: 5; */
+
+}
